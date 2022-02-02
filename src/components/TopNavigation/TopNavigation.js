@@ -1,5 +1,7 @@
 import React, { Component,Fragment } from 'react';
 import {Navbar,Container,Nav} from "react-bootstrap";
+import whiteLogo from '../../asset/image/logo/navLogo.png'
+import blueLogo from '../../asset/image/logo/navlogoScroll.png'
 
 class TopNavigation extends Component {
 
@@ -7,19 +9,20 @@ class TopNavigation extends Component {
     constructor(){
         super();
         this.state={
-            navBarTitle:"navTitle"
+            navBarTitle:"navTitle",
+            navBarLogo:[whiteLogo]
         }
     }
 
     onScroll=()=>{
         if(window.scrollY>100){
-            this.setState({navBarTitle:'navTitleScroll'})
+            this.setState({navBarTitle:'navTitleScroll', navBarLogo:[blueLogo]})
         }
         else if(window.scrollY<100){
-            this.setState({navBarTitle:'navTitle'})
+            this.setState({navBarTitle:'navTitle', navBarLogo:[whiteLogo]})
         }
     }
-
+    
     componentDidMount(){
         window.addEventListener('scroll', this.onScroll)
     }
@@ -30,7 +33,7 @@ class TopNavigation extends Component {
             <Fragment>
                 <Navbar fixed="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
                     <Container>
-                        <Navbar.Brand className={this.state.navBarTitle}>Zumon Hossain</Navbar.Brand>
+                        <Navbar.Brand className={this.state.navBarTitle}><img className="navLogoImg" src={this.state.navBarLogo} /> Zumon Hossain</Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
