@@ -10,19 +10,20 @@ class TopNavigation extends Component {
         super();
         this.state={
             navBarTitle:"navTitle",
-            navBarLogo:[whiteLogo]
+            navBarLogo:[whiteLogo],
+            navBarBack:"navBackground"
         }
     }
 
     onScroll=()=>{
         if(window.scrollY>100){
-            this.setState({navBarTitle:'navTitleScroll', navBarLogo:[blueLogo]})
+            this.setState({navBarTitle:'navTitleScroll', navBarLogo:[blueLogo], navBarBack:'navBackgroundScroll'})
         }
         else if(window.scrollY<100){
-            this.setState({navBarTitle:'navTitle', navBarLogo:[whiteLogo]})
+            this.setState({navBarTitle:'navTitle', navBarLogo:[whiteLogo], navBarBack:'navBackground'})
         }
     }
-    
+
     componentDidMount(){
         window.addEventListener('scroll', this.onScroll)
     }
@@ -31,7 +32,7 @@ class TopNavigation extends Component {
     render() {
         return (
             <Fragment>
-                <Navbar fixed="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
+                <Navbar className={this.state.navBarBack} fixed="top" collapseOnSelect expand="lg" variant="dark">
                     <Container>
                         <Navbar.Brand className={this.state.navBarTitle}><img className="navLogoImg" src={this.state.navBarLogo} /> Zumon Hossain</Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
