@@ -2,6 +2,8 @@ import React, { Component,Fragment } from 'react';
 import {Navbar,Container,Nav} from "react-bootstrap";
 import whiteLogo from '../../asset/image/logo/navLogo.png'
 import blueLogo from '../../asset/image/logo/navlogoScroll.png'
+import '../../asset/css/custom.css'
+import '../../asset/css/bootstrap.min.css'
 
 class TopNavigation extends Component {
 
