@@ -167,3 +167,25 @@
     padding: 10px;
     border-radius: 2px;
 }
+.projectCard{
+    border-radius: 2px;
+    border: none !important;
+    margin: 2px;
+    box-shadow: 0 0 8px rgba(0,115,230,0.2);
+}
+.projectImg{
+    height: 300px;
+}
+.projectCard:hover{
+    box-shadow: 0 0 8px rgba(0,115,230,0.2);
+}
+.projectCardTitle{
+    font-family: 'Montserreat',sans-serif;
+    font-weight: 600 !important;
+    font-size: 18px;
+}
+.projectCardDes{
+    font-family: 'Raleway',sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
