@@ -189,3 +189,33 @@
     font-weight: 400;
     font-size: 15px;
 }
+.projectButton{
+    background-color: #4c9DED !important;
+    border: 1px solid #4c9DED !important;
+}
+.coursesImg{
+    width: 100%;
+    height: 133px;
+}
+.coursesTitle{
+    font-family: 'Montserreat',sans-serif;
+    font-weight: 600 !important;
+    font-size: 18px;
+}
+.coursesDes{
+    font-family: 'Raleway',sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0px;
+}
+.coursesLink{
+    font-family: 'Montserreat',sans-serif;
+    font-weight: 600 !important;
+    font-size: 15px;
+    text-align: justify;
+    text-decoration: none;
+    color: #4c9DED;
+}
+.coursesJustufy{
+    text-align: justify;
+}

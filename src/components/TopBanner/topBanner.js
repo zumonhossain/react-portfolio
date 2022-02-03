@@ -12,7 +12,7 @@ class topBanner extends Component {
                                         <Col className="text-center">
                                             <h1 className="topTitle">ZUMON HOSSAIN</h1>
                                             <h4 className="topSubTitle">Web Design and Web Developer</h4>
-                                            <Button variant="primary">More Info</Button>
+                                            <Button className="projectButton" variant="primary">More Info</Button>
                                         </Col>
                                     </Row>
                             </Container>

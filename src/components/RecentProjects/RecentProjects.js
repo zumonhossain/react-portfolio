@@ -19,7 +19,7 @@ class RecentProjects extends Component {
                                         <Card.Text className="projectCardDes">
                                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
                                         </Card.Text>
-                                        <Button variant="primary">Details</Button>
+                                        <Button className="projectButton" variant="primary">Details</Button>
                                     </Card.Body>
                                 </Card>
                             </Col>
@@ -31,7 +31,7 @@ class RecentProjects extends Component {
                                         <Card.Text className="projectCardDes">
                                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
                                         </Card.Text>
-                                        <Button variant="primary">Details</Button>
+                                        <Button className="projectButton" variant="primary">Details</Button>
                                     </Card.Body>
                                 </Card>
                             </Col>
@@ -43,7 +43,7 @@ class RecentProjects extends Component {
                                         <Card.Text className="projectCardDes">
                                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
                                         </Card.Text>
-                                        <Button variant="primary">Details</Button>
+                                        <Button className="projectButton" variant="primary">Details</Button>
                                     </Card.Body>
                                 </Card>
                             </Col>
