@@ -110,3 +110,60 @@
     font-size: 14px;
     font-weight: 300;
 }
+
+.summaryBanner{
+    background-image: url("../image/summaryBg.jpg");
+    min-height: 350px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.summaryBannerOverlay{
+    position: absolute;
+    min-height: 350px;
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+}
+.summarySectionMargin{
+    margin-top:5rem;
+}
+.countNumber{
+    color: #ffffff;
+    font-size: 48px;
+    font-family: 'Montserreat',sans-serif;
+    font-weight:600;
+}
+.countTitle{
+    color: #ffffff;
+    font-family: 'Raleway',sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+}
+.countSection{
+    padding-top: 10%;
+}
+
+.cardTitle{
+    color: #000000;
+    font-family: 'Raleway',sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    text-align: justify
+}
+.cardSubTitle{
+    color: #000000;
+    font-family: 'Montserreat',sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: justify
+}
+.iconCircleColor{
+    color: #0073E6;
+    font-size: 16px;
+}
+.workCard{
+    margin-top: 17%;
+    padding: 10px;
+    border-radius: 2px;
+}
