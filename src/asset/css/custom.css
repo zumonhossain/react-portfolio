@@ -264,3 +264,51 @@
     width: 100px;
     height: 100px;
 }
+
+/* footer */
+
+.footerSection{
+    box-shadow: 0 0 4px 0 rgba(0, 115, 230, 0.2);
+    margin-top:5rem;
+}
+.socialLink{
+    text-decoration: none;
+    color: #4c9DED;
+    font-family: 'Raleway',sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    display: inline-block;
+    padding: 3px 0px;
+}
+.socialLink:hover{
+    text-decoration: none;
+    color: #000000;
+}
+.footerLink{
+    color: #7F7E7E;
+    font-weight: 400;
+    font-size: 14px;
+    text-decoration: none;
+    font-family: 'Raleway',sans-serif;
+    display: inline-block;
+    padding: 3px 0px;
+}
+.footerLink:hover{
+    color: #4c9DED;
+    text-decoration: none;
+}
+.copyrightSection{
+    padding: 20px;
+    background-color: #4c9DED;
+}
+.copyrightLink{
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 14px;
+    text-decoration: none;
+    font-family: 'Montserreat',sans-serif;
+}
+.copyrightLink:hover{
+    color: #000000;
+    text-decoration: none;
+}
