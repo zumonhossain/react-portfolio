@@ -312,3 +312,29 @@
     color: #000000;
     text-decoration: none;
 }
+
+/* page top */
+
+.topFixedPage{
+    background-image: url("../image/banner.jpg");
+    min-height: 280px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.topPageOverlay{
+    position: absolute;
+    min-height: 280px;
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+}
+.topPageContent{
+    margin-top:8rem;
+}
+.topPageSubTitle{
+    font-family: 'Montserreat',sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 28px;
+}
