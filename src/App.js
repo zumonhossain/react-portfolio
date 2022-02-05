@@ -1,10 +1,10 @@
 import React from 'react';
-import ProjectsPage from "./pages/ProjectsPage";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
   return (
     <div>
-         <ProjectsPage/> 
+         <ContactPage/> 
     </div>
   );
 }

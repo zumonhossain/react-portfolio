@@ -311,6 +311,7 @@
 .copyrightLink:hover{
     color: #000000;
     text-decoration: none;
+    cursor: pointer;
 }
 
 /* page top */
@@ -337,4 +338,12 @@
     font-weight: 700;
     color: #ffffff;
     font-size: 28px;
+}
+
+/* contact */
+
+.form-control:focus{
+    border-radius: 2px !important;
+    border-color: #0073E6 !important;
+    box-shadow: 0 0 4px 0 rgba(0,115,230,0.2) !important;
 }
