@@ -11,7 +11,7 @@ class Courses extends Component {
                     <Container className="text-center">
                         <h1 className="serviceMainTitle">Our Courses</h1>
                         <Row>
-                            <Col lg={6}  md={12} sm={12}>
+                            <Col lg={6}  md={12} sm={12} className="p-2">
                                 <Row>
                                     <Col lg={6}  md={6} sm={12}>
                                         <img className="coursesImg" src={coursesOne} />
@@ -23,7 +23,7 @@ class Courses extends Component {
                                     </Col>
                                 </Row>
                             </Col>
-                            <Col lg={6}  md={12} sm={12}>
+                            <Col lg={6}  md={12} sm={12} className="p-2">
                                 <Row>
                                     <Col lg={6}  md={6} sm={12}>
                                         <img className="coursesImg" src={coursesTwo} />
@@ -35,7 +35,7 @@ class Courses extends Component {
                                     </Col>
                                 </Row>
                             </Col>
-                            <Col lg={6}  md={12} sm={12} className="mt-3">
+                            <Col lg={6}  md={12} sm={12} className="mt-3 p-2">
                                 <Row>
                                     <Col lg={6}  md={6} sm={12}>
                                         <img className="coursesImg" src={coursesTwo} />
@@ -47,7 +47,7 @@ class Courses extends Component {
                                     </Col>
                                 </Row>
                             </Col>
-                            <Col lg={6}  md={12} sm={12} className="mt-3">
+                            <Col lg={6}  md={12} sm={12} className="mt-3 p-2">
                                 <Row>
                                     <Col lg={6}  md={6} sm={12}>
                                         <img className="coursesImg" src={coursesOne} />
