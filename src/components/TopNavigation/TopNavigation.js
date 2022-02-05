@@ -46,12 +46,12 @@ class TopNavigation extends Component {
                                 
                             </Nav>
                             <Nav>
-                                <Nav.Link><NavLink className={this.state.navBarItem} to="/">Home</NavLink></Nav.Link>
-                                <Nav.Link><NavLink className={this.state.navBarItem} to="/about">About</NavLink></Nav.Link>
-                                <Nav.Link><NavLink className={this.state.navBarItem} to="/service">Services</NavLink></Nav.Link>
-                                <Nav.Link><NavLink className={this.state.navBarItem} to="/course">Courses</NavLink></Nav.Link>
-                                <Nav.Link><NavLink className={this.state.navBarItem} to="/portfolio">Portfolio</NavLink></Nav.Link>
-                                <Nav.Link><NavLink className={this.state.navBarItem} to="/contact">Contact</NavLink></Nav.Link>
+                                <Nav.Link><NavLink exact activeStyle={{color:'#00a8ee'}} className={this.state.navBarItem} to="/">Home</NavLink></Nav.Link>
+                                <Nav.Link><NavLink exact activeStyle={{color:'#00a8ee'}} className={this.state.navBarItem} to="/about">About</NavLink></Nav.Link>
+                                <Nav.Link><NavLink exact activeStyle={{color:'#00a8ee'}} className={this.state.navBarItem} to="/service">Services</NavLink></Nav.Link>
+                                <Nav.Link><NavLink exact activeStyle={{color:'#00a8ee'}} className={this.state.navBarItem} to="/course">Courses</NavLink></Nav.Link>
+                                <Nav.Link><NavLink exact activeStyle={{color:'#00a8ee'}} className={this.state.navBarItem} to="/portfolio">Portfolio</NavLink></Nav.Link>
+                                <Nav.Link><NavLink exact activeStyle={{color:'#00a8ee'}} className={this.state.navBarItem} to="/contact">Contact</NavLink></Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
