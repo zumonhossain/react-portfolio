@@ -35,7 +35,7 @@ class Footer extends Component {
                                 <h2 className="serviceName">Legal</h2>
                                 <Link className="footerLink" to="/refund">Refund Policy</Link><br/>
                                 <Link className="footerLink" to="/terms">Terms And Condition</Link><br/>
-                                <a className="footerLink" href="#">Privacy Policy</a><br/>
+                                <Link className="footerLink" to="/privacy">Privacy Policy</Link><br/>
                             </Col>
                         </Row>
                 </Container>
