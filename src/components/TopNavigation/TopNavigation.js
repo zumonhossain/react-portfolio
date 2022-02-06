@@ -41,7 +41,7 @@ class TopNavigation extends Component {
                 <title>{this.state.pageTitle}</title>
                 <Navbar variant={this.state.navVariant} className={this.state.navBarBack} fixed="top" collapseOnSelect expand="lg">
                     <Container>
-                        <Navbar.Brand className={this.state.navBarTitle}><img className="navLogoImg" src={this.state.navBarLogo} /> Zumon Hossain</Navbar.Brand>
+                        <Navbar.Brand><NavLink className={this.state.navBarTitle} to="/"><img className="navLogoImg" src={this.state.navBarLogo} /> Zumon Hossain</NavLink></Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
