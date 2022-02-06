@@ -3,6 +3,7 @@ import {Container, Row, Col, Card, Button} from "react-bootstrap";
 import projectOne from '../../asset/image/project/project-1.jpg';
 import projectTwo from '../../asset/image/project/project-2.jpg';
 import projectThree from '../../asset/image/project/project-3.jpg';
+import {Link} from "react-router-dom";
 
 
 class AllProjects extends Component {
@@ -19,7 +20,7 @@ class AllProjects extends Component {
                                     <Card.Text className="projectCardDes">
                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
                                     </Card.Text>
-                                    <Button className="projectButton" variant="primary">Details</Button>
+                                    <Button className="projectButton" variant="primary"><Link to="/projectDetails" className="linkStyle">Details</Link></Button>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -31,7 +32,7 @@ class AllProjects extends Component {
                                     <Card.Text className="projectCardDes">
                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
                                     </Card.Text>
-                                    <Button className="projectButton" variant="primary">Details</Button>
+                                    <Button className="projectButton" variant="primary"><Link to="/projectDetails" className="linkStyle">Details</Link></Button>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -43,7 +44,7 @@ class AllProjects extends Component {
                                     <Card.Text className="projectCardDes">
                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
                                     </Card.Text>
-                                    <Button className="projectButton" variant="primary">Details</Button>
+                                    <Button className="projectButton" variant="primary"><Link to="/projectDetails" className="linkStyle">Details</Link></Button>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -55,7 +56,7 @@ class AllProjects extends Component {
                                     <Card.Text className="projectCardDes">
                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
                                     </Card.Text>
-                                    <Button className="projectButton" variant="primary">Details</Button>
+                                    <Button className="projectButton" variant="primary"><Link to="/projectDetails" className="linkStyle">Details</Link></Button>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -67,7 +68,7 @@ class AllProjects extends Component {
                                     <Card.Text className="projectCardDes">
                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
                                     </Card.Text>
-                                    <Button className="projectButton" variant="primary">Details</Button>
+                                    <Button className="projectButton" variant="primary"><Link to="/projectDetails" className="linkStyle">Details</Link></Button>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -79,7 +80,7 @@ class AllProjects extends Component {
                                     <Card.Text className="projectCardDes">
                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
                                     </Card.Text>
-                                    <Button className="projectButton" variant="primary">Details</Button>
+                                    <Button className="projectButton" variant="primary"><Link to="/projectDetails" className="linkStyle">Details</Link></Button>
                                 </Card.Body>
                             </Card>
                         </Col>

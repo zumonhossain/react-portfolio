@@ -347,3 +347,16 @@
     border-color: #0073E6 !important;
     box-shadow: 0 0 4px 0 rgba(0,115,230,0.2) !important;
 }
+
+.linkStyle{
+    color: white !important;
+    text-decoration: none !important;
+}
+.linkStyle:hover{
+    color: white !important;
+    text-decoration: none !important;
+}
+.projectDetailsImg{
+    width: 100%;
+    height: 500px;
+}
