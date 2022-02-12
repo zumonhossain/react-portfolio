@@ -9,7 +9,6 @@ import AppUrl from "../../RestAPI/AppUrl";
 
 class Services extends Component {
 
-
     constructor(){
         super();
         this.state={
