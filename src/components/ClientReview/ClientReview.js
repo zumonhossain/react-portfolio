@@ -3,9 +3,27 @@ import {Container, Row, Col} from "react-bootstrap";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import sliderOne from '../../asset/image/slider/slider.png'
+import sliderOne from '../../asset/image/slider/slider.png';
+
+import RestClient from "../../RestAPI/RestClient";
+import AppUrl from "../../RestAPI/AppUrl";
 
 class ClientReview extends Component {
+
+    constructor(){
+        super();
+        this.state={
+            myData:[]
+        }
+        
+    }
+
+    componentDidMount() {
+        RestClient.GetRequest(AppUrl.ClientReview).then(result=>{
+            this.setState({myData:result})
+        })
+    }
+
     render() {
 
         var settings = {
@@ -46,8 +64,21 @@ class ClientReview extends Component {
             ]
         };
 
+        const myList = this.state.myData
 
+        const myView = myList.map(myList=>{
 
+            return <div>
+                        <Row className="text-center justify-content-center">
+                            <Col lg={6} md={6} sm={12}>
+                                <img className="sliderImg" src={myList.client_img} />
+                                <h3 className="serviceName">{myList.client_title}</h3>
+                                <p className="serviceText">{myList.client_description}</p>
+                            </Col>
+                        </Row>
+                    </div>
+
+        })
 
         return (
             <Fragment>
@@ -55,33 +86,9 @@ class ClientReview extends Component {
                     <h1 className="serviceMainTitle">CLIENT SAYS</h1>
                     
                     <Slider {...settings}>
-                        <div>
-                            <Row className="text-center justify-content-center">
-                                <Col lg={6} md={6} sm={12}>
-                                    <img className="sliderImg" src={sliderOne} />
-                                    <h3 className="serviceName">Web Developer</h3>
-                                    <p className="serviceText">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without. </p>
-                                </Col>
-                            </Row>
-                        </div>
-                        <div>
-                            <Row className="text-center justify-content-center">
-                                <Col lg={6} md={6} sm={12}>
-                                    <img className="sliderImg" src={sliderOne} />
-                                    <h3 className="serviceName">Web Developer</h3>
-                                    <p className="serviceText">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without. </p>
-                                </Col>
-                            </Row>
-                        </div>
-                        <div>
-                            <Row className="text-center justify-content-center">
-                                <Col lg={6} md={6} sm={12}>
-                                    <img className="sliderImg" src={sliderOne} />
-                                    <h3 className="serviceName">Web Developer</h3>
-                                    <p className="serviceText">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without. </p>
-                                </Col>
-                            </Row>
-                        </div>
+                    
+                        {myView}
+
                     </Slider>
 
                 </Container>
