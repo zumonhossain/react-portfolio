@@ -1,6 +1,6 @@
 class AppUrl{
 
-    static BaseUrl = 'http://127.0.0.1:8000';
+    static BaseUrl = 'https://siteapi.zumonhossain.com/';
 
     static HomeTopTitle = this.BaseUrl+'/HomeTopTitle';
     static TechDesc = this.BaseUrl+'/TechDesc';

@@ -1,14 +1,15 @@
 import axios from 'axios';
+class RestClient {
 
-class RestClient{
+   static GetRequest=(getUrl)=>{
+      return axios.get(getUrl).then(response=>{
+           return response.data;
 
-    static GetRequest(getUrl){
-        axios.get(getUrl).the(response=>{
-            return response.data
         }).catch(error=>{
-            return null;
-        });
+           return null;
+       });
     }
 
 }
-export default RestClient
+
+export default RestClient;
