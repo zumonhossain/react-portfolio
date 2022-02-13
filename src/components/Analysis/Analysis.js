@@ -11,13 +11,18 @@ class Analysis extends Component {
     constructor(){
         super();
         this.state={
-            data:[ ]
+            data:[ ],
+            desc:"..."
         }
     }
 
     componentDidMount() {
         RestClient.GetRequest(AppUrl.ChartData).then(result=>{
             this.setState({ data:result })
+        })
+
+        RestClient.GetRequest(AppUrl.TechDesc).then(result=>{
+            this.setState({ desc:result[0]['tech_description'] })
         })
     }
 
@@ -40,10 +45,7 @@ class Analysis extends Component {
                                 </ResponsiveContainer>
                             </Col>
                             <Col lg={6} md={6} sm={12}>
-                                <p className="technology-details">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen.</p>
-                                <p className="technology-details">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen.</p>
-                                <p className="technology-details">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen.</p>
-                                <p className="technology-details">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen.</p>
+                                <p className="technology-details"> {this.state.desc} </p>
                             </Col>
                         </Row>
                 </Container>
