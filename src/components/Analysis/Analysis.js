@@ -4,6 +4,7 @@ import {BarChart, Bar, ResponsiveContainer, XAxis, Tooltip} from "recharts";
 
 import RestClient from "../../RestAPI/RestClient";
 import AppUrl from "../../RestAPI/AppUrl";
+import parse from 'html-react-parser';
 
 class Analysis extends Component {
 
@@ -45,7 +46,7 @@ class Analysis extends Component {
                                 </ResponsiveContainer>
                             </Col>
                             <Col lg={6} md={6} sm={12}>
-                                <p className="technology-details"> {this.state.desc} </p>
+                                <p className="technology-details"> { parse(this.state.desc) } </p>
                             </Col>
                         </Row>
                 </Container>

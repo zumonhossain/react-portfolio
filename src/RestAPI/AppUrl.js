@@ -17,6 +17,7 @@ class AppUrl{
     static ContactSend = this.BaseUrl+'/ContactSend';
     static ClientReview = this.BaseUrl+'/ClientReview';
     static ChartData = this.BaseUrl+'/ChartData';
+    static Information = this.BaseUrl+'/Information';
 
 
 }
