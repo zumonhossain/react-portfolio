@@ -2,23 +2,23 @@ import React, { Component, Fragment } from 'react';
 import {Container, Row, Col} from "react-bootstrap";
 import {BarChart, Bar, ResponsiveContainer, XAxis, Tooltip} from "recharts";
 
+import RestClient from "../../RestAPI/RestClient";
+import AppUrl from "../../RestAPI/AppUrl";
+
 class Analysis extends Component {
 
 
     constructor(){
         super();
         this.state={
-            data:[
-                {Technology:'HTML', Projects:100},
-                {Technology:'Sql', Projects:80},
-                {Technology:'Css', Projects:100},
-                {Technology:'Bootstrap', Projects:90},
-                {Technology:'React', Projects:90},
-                {Technology:'PHP', Projects:100},
-                {Technology:'Laravel', Projects:90},
-                {Technology:'Jquery', Projects:60},
-            ]
+            data:[ ]
         }
+    }
+
+    componentDidMount() {
+        RestClient.GetRequest(AppUrl.ChartData).then(result=>{
+            this.setState({ data:result })
+        })
     }
 
 
@@ -31,9 +31,9 @@ class Analysis extends Component {
                             <Col lg={6} md={6} sm={12}>
                                 <ResponsiveContainer>
                                     <BarChart width={100} height={300} data={this.state.data}>
-                                        <XAxis dataKey="Technology" />
+                                        <XAxis dataKey="technology" />
                                         <Tooltip />
-                                        <Bar dataKey="Projects" fill="#4c9DED">
+                                        <Bar dataKey="projects" fill="#4c9DED">
                                             
                                         </Bar>
                                     </BarChart>
