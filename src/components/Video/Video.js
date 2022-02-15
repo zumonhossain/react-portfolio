@@ -5,14 +5,28 @@ import {faPlayCircle} from "@fortawesome/free-solid-svg-icons";
 import 'video-react/dist/video-react.css';
 import { Player, BigPlayButton } from 'video-react';
 
-class Video extends Component {
+import RestClient from "../../RestAPI/RestClient";
+import AppUrl from "../../RestAPI/AppUrl";
 
+class Video extends Component {
 
     constructor(){
         super();
         this.state={
-            show:false
+            show:false,
+            video_description:"",
+            video_url:""
         }
+    }
+
+    componentDidMount() {
+        RestClient.GetRequest(AppUrl.VideoHome).then(result=>{
+            this.setState({
+                video_description:result[0]['video_description'],
+                video_url:result[0]['video_url']
+                
+                })
+        })
     }
 
     modalClose=()=>this.setState({show:false})
@@ -28,7 +42,7 @@ class Video extends Component {
                             <Col lg={12} md={12} sm={12}>
                                 <div className="videoCard">
                                     <p className="videoTitle">How I Do</p>
-                                    <p className="videoDes">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+                                    <p className="videoDes"> { this.state.video_description } </p>
                                     <p><FontAwesomeIcon onClick={this.modalOpen} className="playBtn" icon={faPlayCircle} /></p>
                                 </div>
                             </Col>
@@ -37,7 +51,7 @@ class Video extends Component {
                 <Modal size="lg" show={this.state.show} onHide={this.modalClose}>
                     <Modal.Body>
                             <Player>
-                                <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" />
+                                <source src=" { this.state.video_url } " />
                                 <BigPlayButton position="center"/>
                             </Player>
                     </Modal.Body>
