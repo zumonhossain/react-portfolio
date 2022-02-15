@@ -3,7 +3,31 @@ import {Container, Row, Col, Form, Button} from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faEnvelope,faPhone} from "@fortawesome/free-solid-svg-icons";
 
+import RestClient from "../../RestAPI/RestClient";
+import AppUrl from "../../RestAPI/AppUrl";
+
 class Contact extends Component {
+
+    constructor(){
+        super();
+        this.state={
+            address:"",
+            email:"",
+            phone:"",
+        }
+    }
+
+    componentDidMount() {
+        RestClient.GetRequest(AppUrl.Footer).then(result=>{
+            this.setState({
+                address:result[0]['address'],
+                email:result[0]['email'],
+                phone:result[0]['phone'],
+                
+                })
+        })
+    }
+
     render() {
         return (
             <Fragment>
@@ -31,9 +55,9 @@ class Contact extends Component {
                         </Col>
                         <Col lg={6} md={6} sm={12}>
                             <h2 className="serviceName">Discuss Now</h2>
-                            <p className="serviceText">House No. 8/A/10 (Level-6), Road: #13, Dhanmondi, Dhaka, Bangladesh.</p>
-                            <p className="serviceText"><FontAwesomeIcon icon={faEnvelope} /> zumonhossain10@gmail.com</p>
-                            <p className="serviceText"><FontAwesomeIcon icon={faPhone} /> +880 1644 954 478</p>
+                            <p className="serviceText"> { this.state.address } </p>
+                            <p className="serviceText"><FontAwesomeIcon icon={faEnvelope} /> { this.state.email } </p>
+                            <p className="serviceText"><FontAwesomeIcon icon={faPhone} /> { this.state.phone } </p>
                         </Col>
                     </Row>
                 </Container>

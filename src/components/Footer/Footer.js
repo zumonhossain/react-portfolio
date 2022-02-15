@@ -5,7 +5,37 @@ import {faFacebook,faLinkedin} from "@fortawesome/free-brands-svg-icons";
 import {faEnvelope,faPhone} from "@fortawesome/free-solid-svg-icons";
 import {Link} from "react-router-dom";
 
+import RestClient from "../../RestAPI/RestClient";
+import AppUrl from "../../RestAPI/AppUrl";
+
 class Footer extends Component {
+
+    constructor(){
+        super();
+        this.state={
+            address:"",
+            email:"",
+            phone:"",
+            facebook:"",
+            youtube:"",
+            footer_credit:""
+        }
+    }
+
+    componentDidMount() {
+        RestClient.GetRequest(AppUrl.Footer).then(result=>{
+            this.setState({
+                address:result[0]['address'],
+                email:result[0]['email'],
+                phone:result[0]['phone'],
+                facebook:result[0]['facebook'],
+                youtube:result[0]['youtube'],
+                footer_credit:result[0]['footer_credit'],
+                
+                })
+        })
+    }
+
     render() {
         return (
             <Fragment>
@@ -19,9 +49,9 @@ class Footer extends Component {
 
                             <Col lg={3} md={6} sm={12} className="p-5">
                                 <h2 className="serviceName">Address</h2>
-                                <p className="serviceText">House No. 8/A/10 (Level-6), Road: #13, Dhanmondi, Dhaka, Bangladesh.</p>
-                                <p className="serviceText"><FontAwesomeIcon icon={faEnvelope} /> zumonhossain10@gmail.com</p>
-                                <p className="serviceText"><FontAwesomeIcon icon={faPhone} /> +880 1644 954 478</p>
+                                <p className="serviceText"> { this.state.address } </p>
+                                <p className="serviceText"><FontAwesomeIcon icon={faEnvelope} /> { this.state.email } </p>
+                                <p className="serviceText"><FontAwesomeIcon icon={faPhone} /> { this.state.phone } </p>
                             </Col>
 
                             <Col lg={3} md={6} sm={12} className="p-5">
@@ -40,7 +70,7 @@ class Footer extends Component {
                 </Container>
 
                 <Container fluid={true} className="text-center copyrightSection">
-                    <a className="copyrightLink">zumonhossain.com &copy; 2020</a>
+                    <a className="copyrightLink"> { this.state.footer_credit } </a>
                 </Container>
             </Fragment>
         );
