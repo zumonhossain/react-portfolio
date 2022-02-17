@@ -32,8 +32,6 @@ class Video extends Component {
     modalClose=()=>this.setState({show:false})
     modalOpen=()=>this.setState({show:true})
 
-
-
     render() {
         return (
             <Fragment>

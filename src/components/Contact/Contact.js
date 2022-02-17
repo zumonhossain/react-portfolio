@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import {Container, Row, Col, Form, Button} from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faEnvelope,faPhone} from "@fortawesome/free-solid-svg-icons";
-
+import axios from 'axios';
 import RestClient from "../../RestAPI/RestClient";
 import AppUrl from "../../RestAPI/AppUrl";
 
@@ -28,6 +28,21 @@ class Contact extends Component {
         })
     }
 
+    sendContact(){
+        let name=  document.getElementById("name").value;
+        let email=  document.getElementById("email").value;
+        let msg=  document.getElementById("msg").value;
+
+        let jsonObject={name:name,email:email,msg:msg};
+        RestClient.PostRequest(AppUrl.ContactSend,JSON.stringify(jsonObject)).then(result=>{
+            alert(result);
+        }).catch(error=>{
+            alert("Error");
+        })
+
+  }
+
+
     render() {
         return (
             <Fragment>
@@ -38,17 +53,17 @@ class Contact extends Component {
                             <Form>
                                 <Form.Group className="mb-3">
                                     <Form.Label className="serviceText">Name</Form.Label>
-                                    <Form.Control type="text"/>
+                                    <Form.Control id="name" type="text"/>
                                 </Form.Group>
                                 <Form.Group className="mb-3">
                                     <Form.Label className="serviceText">Email Address</Form.Label>
-                                    <Form.Control type="email"/>
+                                    <Form.Control id="email" type="email"/>
                                 </Form.Group>
                                 <Form.Group className="mb-3">
                                     <Form.Label className="serviceText">Your Message</Form.Label>
-                                    <Form.Control as="textarea" rows={3} />
+                                    <Form.Control id="msg" as="textarea" rows={3} />
                                 </Form.Group>
-                                <Button variant="primary" type="submit">
+                                <Button variant="primary" onClick={this.sendContact}>
                                     Submit
                                 </Button>
                             </Form>
