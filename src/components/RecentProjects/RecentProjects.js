@@ -37,7 +37,7 @@ class RecentProjects extends Component {
                             <Card.Body>
                                 <Card.Title className="projectCardTitle">{myList.project_name}</Card.Title>
                                 <Card.Text className="projectCardDes">{myList.short_description}</Card.Text>
-                                <Button className="projectButton" variant="primary"><Link to={"/projectDetails/"+myList.id} className="linkStyle">Details</Link></Button>
+                                <Button className="projectButton" variant="primary"><Link to={"/ProjectDetails/"+myList.id+"/"+myList.project_name} className="linkStyle">Details</Link></Button>
                             </Card.Body>
                         </Card>
                     </Col>
