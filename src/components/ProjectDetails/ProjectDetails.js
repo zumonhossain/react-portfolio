@@ -48,7 +48,7 @@ class ProjectDetails extends Component {
 
                                 { parse(this.state.project_features) }
 
-                                <Button className="projectButton" variant="primary">Details</Button>
+                                <Button target="_blank" href={""+this.state.live_preview} className="projectButton" variant="primary">Details</Button>
                             </Col>
                         </Row>
                 </Container>

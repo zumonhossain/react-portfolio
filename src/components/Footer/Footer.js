@@ -43,8 +43,8 @@ class Footer extends Component {
                         <Row>
                             <Col lg={3} md={6} sm={12} className="p-5">
                                 <h2 className="serviceName">Flow Me</h2>
-                                <a className="socialLink" href="#"><FontAwesomeIcon icon={faFacebook} /> Facebook</a><br/>
-                                <a className="socialLink" href="#"><FontAwesomeIcon icon={faLinkedin} /> linkedin</a><br/>
+                                <a className="socialLink" target="_blank" href={""+this.state.facebook}><FontAwesomeIcon icon={faFacebook} /> Facebook</a><br/>
+                                <a className="socialLink" target="_blank" href={""+this.state.youtube}><FontAwesomeIcon icon={faLinkedin} /> linkedin</a><br/>
                             </Col>
 
                             <Col lg={3} md={6} sm={12} className="p-5">

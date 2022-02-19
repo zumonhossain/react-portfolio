@@ -6,8 +6,17 @@ import Footer from "../components/Footer/Footer";
 
 class CourseDetailsPage extends Component {
 
+    constructor({match}){
+        super();
+        this.state={
+            projectPassedID:match.params.projectID
+        }
+    }
+
     componentDidMount(){
         window.scroll(0,0)
+
+        
     }
 
 
