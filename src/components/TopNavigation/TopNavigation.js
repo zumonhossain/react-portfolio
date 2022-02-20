@@ -3,6 +3,7 @@ import {Navbar,Container,Nav} from "react-bootstrap";
 import whiteLogo from '../../asset/image/logo/navLogo.png'
 import blueLogo from '../../asset/image/logo/navlogoScroll.png'
 import '../../asset/css/custom.css'
+import '../../asset/css/responsive.css'
 import '../../asset/css/bootstrap.min.css'
 import {NavLink} from "react-router-dom";
 
