@@ -7,7 +7,6 @@ import { Player, BigPlayButton } from 'video-react';
 
 import RestClient from "../../RestAPI/RestClient";
 import AppUrl from "../../RestAPI/AppUrl";
-import Loading from "../Loading/Loading";
 
 class Video extends Component {
 
@@ -16,8 +15,7 @@ class Video extends Component {
         this.state={
             show:false,
             video_description:"",
-            video_url:"",
-            loading:true
+            video_url:""
         }
     }
 
@@ -25,8 +23,7 @@ class Video extends Component {
         RestClient.GetRequest(AppUrl.VideoHome).then(result=>{
             this.setState({
                 video_description:result[0]['video_description'],
-                video_url:result[0]['video_url'],
-                loading:false
+                video_url:result[0]['video_url']
                 
                 })
         })
@@ -36,42 +33,34 @@ class Video extends Component {
     modalOpen=()=>this.setState({show:true})
 
     render() {
-
-        if(this.state.loading==true){
-            return <Loading/>
-        }
-        else{
-
-            return (
-                <Fragment>
-                    <Container className="text-center mt-5">
-                            <Row>
-                                <Col lg={12} md={12} sm={12}>
-                                    <div className="videoCard">
-                                        <p className="videoTitle">How I Do</p>
-                                        <p className="videoDes"> { this.state.video_description } </p>
-                                        <p><FontAwesomeIcon onClick={this.modalOpen} className="playBtn" icon={faPlayCircle} /></p>
-                                    </div>
-                                </Col>
-                            </Row>
-                    </Container>
-                    <Modal size="lg" show={this.state.show} onHide={this.modalClose}>
-                        <Modal.Body>
-                                <Player>
-                                    <source src=" { this.state.video_url } " />
-                                    <BigPlayButton position="center"/>
-                                </Player>
-                        </Modal.Body>
-                        <Modal.Footer>
-                            <Button variant="primary" onClick={this.modalClose}>
-                                Close
-                            </Button>
-                        </Modal.Footer>
-                    </Modal>
-                </Fragment>
-            );
-
-        }
+        return (
+            <Fragment>
+                <Container className="text-center mt-5">
+                        <Row>
+                            <Col lg={12} md={12} sm={12}>
+                                <div className="videoCard">
+                                    <p className="videoTitle">How I Do</p>
+                                    <p className="videoDes"> { this.state.video_description } </p>
+                                    <p><FontAwesomeIcon onClick={this.modalOpen} className="playBtn" icon={faPlayCircle} /></p>
+                                </div>
+                            </Col>
+                        </Row>
+                </Container>
+                <Modal size="lg" show={this.state.show} onHide={this.modalClose}>
+                    <Modal.Body>
+                            <Player>
+                                <source src=" { this.state.video_url } " />
+                                <BigPlayButton position="center"/>
+                            </Player>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="primary" onClick={this.modalClose}>
+                            Close
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
+            </Fragment>
+        );
     }
 }
 
