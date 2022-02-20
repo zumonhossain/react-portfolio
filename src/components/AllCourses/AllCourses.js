@@ -7,6 +7,7 @@ import {Link} from "react-router-dom";
 import RestClient from "../../RestAPI/RestClient";
 import AppUrl from "../../RestAPI/AppUrl";
 import Loading from "../Loading/Loading";
+import WentWrong from "../WentWrong/WentWrong";
 
 class AllCourses extends Component {
 
@@ -14,15 +15,30 @@ class AllCourses extends Component {
         super();
         this.state={
             myData:[],
-            loading:true
+            loading:true,
+            error:false
         }
         
     }
 
     componentDidMount() {
         RestClient.GetRequest(AppUrl.CourseAll).then(result=>{
+
+            if(result == null){
+                this.setState({
+                    error:true,
+                    loading:false
+                })
+            }
+            else{
+                this.setState({
+                    myData:result,
+                    loading:false
+                })
+            }
+        }).catch(error=>{
             this.setState({
-                myData:result,
+                error:true,
                 loading:false
             })
         })
@@ -30,10 +46,10 @@ class AllCourses extends Component {
 
     render() {
 
-        if(this.state.loading==true){
+        if(this.state.loading==true && this.state.error == false){
             return <Loading/>
         }
-        else{
+        else if(this.state.loading == false && this.state.error == false){
             const myList = this.state.myData
 
             const myView = myList.map(myList=>{
@@ -64,6 +80,9 @@ class AllCourses extends Component {
                     </Container>
                 </Fragment>
             );
+        }
+        else if(this.state.error == true){
+            return <WentWrong/>
         }
 
 
